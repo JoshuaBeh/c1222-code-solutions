@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=La+Belle+Aurore&family=Nerko+One&display=swap');
+
+h1, h2 {
+  font-family: 'La Belle Aurore', cursive;
+}
+
+p {
+  font-family: 'Nerko One', cursive;
+  line-height: 2.0;
+}
