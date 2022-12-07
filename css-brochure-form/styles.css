@@ -1,0 +1,56 @@
+* {
+  box-sizing: border-box;
+}
+
+h4 {
+  text-align: center;
+  color: rgb(236 93 87);
+  font-family: AtlasGrotesk, sans-serif;
+}
+
+div {
+  width: 22%;
+  margin: auto;
+  font-weight: 600;
+  font-family: "Brandon Grotesque", sans-serif;
+}
+
+input,
+select {
+  border: 1px solid lightgrey;
+  width: 100%;
+  border-radius: 5px;
+  padding: 11px;
+  margin-bottom: 7px;
+  margin-top: 3px;
+}
+
+label {
+  font-size: 0.75rem;
+  padding-left: 6px;
+  margin-left: 6px;
+}
+
+select {
+  background-color: rgb(243 243 243);
+}
+
+.submit-button {
+  padding-top: 2px;
+  text-align: right;
+  margin-right: 0;
+}
+
+button {
+  background-color: rgb(236 93 87);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 22px;
+  font-family: "Brandon Grotesque", sans-serif;
+  font-size: 1rem;
+}
+
+#hiring-input {
+  padding-left: 2px;
+}
