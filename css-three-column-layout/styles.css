@@ -30,9 +30,13 @@ p {
   flex-basis: 100%;
 }
 
-.column-33 {
-  flex-basis: calc(100%/3);
+.column-25 {
+  flex-basis: calc(100%/4);
   margin: 20px;
+}
+
+.column-12-and-half {
+  flex-basis: 12.5%;
 }
 
 .text-center {
