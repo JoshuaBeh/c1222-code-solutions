@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+
+button {
+  width: 200px;
+  height: 45px;
+  border: 1px solid;
+  font-size: x-large;
+}
+
+button:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  border: 2px solid lightgrey;
+}
+
+th {
+  color: white;
+  background-color: black;
+}
+
+tr:nth-child(odd) {
+  background-color: lightgrey;
+}
