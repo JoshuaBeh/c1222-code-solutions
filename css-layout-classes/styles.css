@@ -1,0 +1,38 @@
+.container {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.row {
+  display: flex;
+}
+
+.column-100 {
+  width: 100%;
+}
+
+.column-33 {
+  width: calc(100%/3);
+}
+
+.column-25 {
+  width: calc(100%/4);
+}
+
+.column-75 {
+  width: 75%;
+}
+
+img {
+  width: 100%;
+}
+
+h1,
+h2 {
+  font-family: "Secular One", sans-serif;
+}
+
+p {
+  font-family: "Open Sans", sans-serif;
+}
