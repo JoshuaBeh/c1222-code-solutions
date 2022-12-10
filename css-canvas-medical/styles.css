@@ -149,6 +149,10 @@ img {
   margin-top: 84.772px;
 }
 
+.margin-top-info {
+  margin-top: 52.386px;
+}
+
 .padding-all {
   padding: 70px 100px 100px 110px;
 }
@@ -231,6 +235,10 @@ img {
   padding-top: 30px;
 }
 
+.pr-40 {
+  padding-right: 40px;
+}
+
 .fw-400 {
   font-weight: 400;
 }
@@ -242,5 +250,9 @@ img {
 }
 
 .padding-ready2 {
+  padding: 42.386px 100px 0;
+}
+
+.padding-footer {
   padding: 42.386px 100px;
 }
