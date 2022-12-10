@@ -51,6 +51,12 @@
   flex-basis: auto;
 }
 
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .center-plus-space {
   display: flex;
   justify-content: space-around;
@@ -118,6 +124,11 @@ img {
 h1 {
   color: rgb(255 255 255);
   font-size: 3rem;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 2rem;
 }
 
 .margin-rl {
@@ -130,8 +141,11 @@ h1 {
   padding-right: 57px;
 }
 
-.padding-all {
+.margin-top {
   margin-top: 84.772px;
+}
+
+.padding-all {
   padding: 70px 100px 100px 110px;
 }
 
@@ -143,8 +157,16 @@ h1 {
   color: white;
 }
 
-#font-temp {
+.grey-text {
+  color: rgb(110 110 110);
+}
+
+#p-font {
   font-size: 1.4rem;
+}
+
+#location-background {
+  background-color: rgb(250 250 250);
 }
 
 .center-image {
@@ -167,4 +189,20 @@ h1 {
   background-blend-mode: multiply;
   max-width: 100%;
   height: auto;
+}
+
+.p-hero {
+  margin-bottom: 84.772px;
+  margin-right: 375px;
+  margin-left: 375px;
+  padding-left: 150px;
+  padding-right: 150px;
+}
+
+.t-align-center {
+  text-align: center;
+}
+
+.pb-15 {
+  padding-bottom: 15px;
 }
