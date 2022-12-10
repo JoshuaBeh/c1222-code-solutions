@@ -98,7 +98,7 @@ a:active {
   text-decoration: none;
 }
 
-button {
+.button-style {
   border: 2px solid rgb(41 68 100);
   border-radius: 4px;
   color: white;
@@ -121,13 +121,13 @@ img {
   max-width: 100%;
 }
 
-h1 {
+.h1-hero-font {
   color: rgb(255 255 255);
   font-size: 3rem;
   font-weight: 400;
 }
 
-h2 {
+.font-2rem {
   font-size: 2rem;
 }
 
@@ -205,4 +205,18 @@ h2 {
 
 .pb-15 {
   padding-bottom: 15px;
+}
+
+.fw-400 {
+  font-weight: 400;
+}
+
+.align-right {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.padding-ready2 {
+  padding: 42.386px 100px;
 }
