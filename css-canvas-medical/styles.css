@@ -98,6 +98,10 @@ a:active {
   color: rgb(160 160 160);
 }
 
+.dark-grey-text {
+  color: rgb(101 97 100);
+}
+
 .button-style {
   border: 2px solid rgb(41 68 100);
   border-radius: 4px;
@@ -125,11 +129,23 @@ a:active {
 
 img {
   max-width: 100%;
+  height: auto;
+}
+
+.w-90 {
+  width: 90%;
 }
 
 .h1-hero-font {
   color: rgb(255 255 255);
   font-size: 3rem;
+  font-weight: 400;
+}
+
+.h1-grey-font-size {
+  color: rgb(80 81 79);
+  font-family: "Tiempos Headline", sans-serif;
+  font-size: 2.5rem;
   font-weight: 400;
 }
 
@@ -150,9 +166,18 @@ img {
   margin-right: 100px;
 }
 
+.padding-tb {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
 .padding-rl {
   padding-left: 100px;
   padding-right: 57px;
+}
+
+.padding-l {
+  padding-left: 100px;
 }
 
 .margin-top {
@@ -171,6 +196,10 @@ img {
   color: rgb(41 68 100);
 }
 
+.light-blue {
+  color: rgb(49 118 158);
+}
+
 .white-text {
   color: white;
 }
@@ -185,6 +214,15 @@ img {
 
 .p-font {
   font-size: 1.6rem;
+}
+
+.small-p-font {
+  font-size: 1.4rem;
+}
+
+.italic-normal {
+  font-style: italic;
+  font-weight: normal;
 }
 
 #location-background {
@@ -217,6 +255,10 @@ img {
   line-height: 2.5;
 }
 
+.line-height-small {
+  line-height: 1.5;
+}
+
 .line-height-0 {
   line-height: 0.5;
 }
@@ -238,8 +280,12 @@ img {
   background-blend-mode: multiply;
 }
 
+.lg-background {
+  background-color: rgb(251 251 251);
+}
+
 #hero-img-product-row {
-  margin: 104.772px 100px 100px;
+  margin: 184.772px 100px 100px;
 }
 
 #hero-img-product-col {
@@ -276,8 +322,16 @@ img {
   padding-top: 30px;
 }
 
+.pt-100 {
+  padding-top: 100px;
+}
+
 .pr-40 {
   padding-right: 40px;
+}
+
+.pr-100 {
+  padding-right: 80px;
 }
 
 .fw-400 {
