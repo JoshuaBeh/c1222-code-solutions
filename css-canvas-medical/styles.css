@@ -149,12 +149,24 @@ img {
   font-weight: 400;
 }
 
-.font-2rem {
-  font-size: 2rem;
+.font-2-5rem {
+  font-size: 2.5rem;
+}
+
+.font-1-6rem {
+  font-size: 1.6rem;
 }
 
 .font-1-5rem {
   font-size: 1.5rem;
+}
+
+.font-1-25rem {
+  font-size: 1.25rem;
+}
+
+.font-1-1rem {
+  font-size: 1.1rem;
 }
 
 .font-anchor {
@@ -190,6 +202,10 @@ img {
 
 .padding-all {
   padding: 70px 100px 100px 110px;
+}
+
+.padding-info {
+  padding: 150px 100px;
 }
 
 .blue-text {
@@ -259,13 +275,14 @@ img {
   line-height: 1.5;
 }
 
-.line-height-0 {
-  line-height: 0.5;
+.line-height-0-7 {
+  line-height: 0.7;
 }
 
-.background-image {
+.b-img-hero {
   display: flex;
   background-image: url("images/hero.jpg");
+  background-size: cover;
   background-color: rgb(196 192 192);
   background-blend-mode: multiply;
   max-width: 100%;
@@ -336,6 +353,10 @@ img {
 
 .fw-400 {
   font-weight: 400;
+}
+
+.fw-600 {
+  font-weight: 600;
 }
 
 .align-right {
