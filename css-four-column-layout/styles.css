@@ -1,0 +1,64 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(247 248 250);
+}
+
+img {
+  width: 100%;
+  height: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+h2 {
+  font-size: 1.4rem;
+}
+
+h3 {
+  font-size: 0.85rem;
+}
+
+p {
+  font-size: 0.7rem;
+}
+
+h2,
+h3 {
+  font-weight: 800;
+}
+
+h2,
+h3,
+p {
+  font-family: Barlow, sans-serif;
+}
+
+.container {
+  width: 1000px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+}
+
+.col-100 {
+  flex-basis: 100%;
+}
+
+.col-25 {
+  flex-basis: 25%;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.resize {
+  width: 4.3rem;
+  height: auto;
+}
