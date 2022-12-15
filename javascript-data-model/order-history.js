@@ -1,6 +1,6 @@
 var orderHistory = [
   {
-    item1: {
+    items: [{
       electronic: null,
       book: {
         name: 'JavaScript for impatient programmers',
@@ -9,7 +9,7 @@ var orderHistory = [
         author: 'Rauschmayer, Dr. Axel',
         price: 31.55
       }
-    },
+    }],
     shipping: {
       orderNumber: 11439416898772232,
       orderPlaced: 'August 4, 2020',
@@ -20,7 +20,7 @@ var orderHistory = [
     }
   },
   {
-    item1: {
+    items: [{
       electronic: null,
       book: {
         name: 'The Timeless Way of Building',
@@ -29,7 +29,7 @@ var orderHistory = [
         author: 'Alexander, Christopher',
         price: 41.33
       }
-    },
+    }],
     shipping: {
       // eslint-disable-next-line no-loss-of-precision
       orderNumber: 11399842681280257,
@@ -41,7 +41,7 @@ var orderHistory = [
     }
   },
   {
-    item1: {
+    items: [{
       electronic: {
         name: 'Gamecube Controller Adapter',
         isbn: 3,
@@ -51,7 +51,7 @@ var orderHistory = [
         price: 15.98
       },
       book: null
-    },
+    }],
     shipping: {
       // eslint-disable-next-line no-loss-of-precision
       orderNumber: 11428755579059409,
@@ -63,7 +63,7 @@ var orderHistory = [
     }
   },
   {
-    item1: {
+    items: [{
       electronic: {
         name: 'GameCube Controller',
         isbn: 4,
@@ -74,7 +74,7 @@ var orderHistory = [
       },
       book: null
     },
-    item2: {
+    {
       electronic: null,
       book: {
         name: 'The Art of Sql',
@@ -83,7 +83,7 @@ var orderHistory = [
         author: 'Faroult, Stephane',
         price: 33.99
       }
-    },
+    }],
     shipping: {
       orderNumber: 11328831772648248,
       orderPlaced: 'July 3, 2020',
