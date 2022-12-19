@@ -18,6 +18,8 @@ function omit(source, keys) {
   return newObj;
 }
 
+/* omit2 only works due to arguments passed, if there was a third item in keys passed
+   and another item in source passed, would need to add (prop !== keys[i += 2]) */
 // eslint-disable-next-line no-unused-vars
 function omit2(source, keys) {
   var newObj = {};
