@@ -1,10 +1,9 @@
 /* exported filterOutNulls */
+
 function filterOutNulls(values) {
   var newArr = [];
   for (var i = 0; i < values.length; i++) {
-    if (values[i] === null) {
-      /* Do Nothing */
-    } else {
+    if (values[i] !== null) {
       newArr.push(values[i]);
     }
   }
@@ -15,7 +14,9 @@ function filterOutNulls(values) {
 function filterOutNulls2(values) {
   var newArr = [];
   for (var i = 0; i < values.length; i++) {
-    if (values[i] !== null) {
+    if (values[i] === null) {
+      /* Do Nothing */
+    } else {
       newArr.push(values[i]);
     }
   }

@@ -1,9 +1,7 @@
 /* exported findIndex */
 function findIndex(array, value) {
   for (var i = 0; i < array.length; i++) {
-    if (array[i] !== value) {
-      /* Do Nothing */
-    } else if (array[i] === value) {
+    if (array[i] === value) {
       return i;
     }
   }
