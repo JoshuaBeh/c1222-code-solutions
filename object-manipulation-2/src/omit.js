@@ -18,14 +18,17 @@ function omit(source, keys) {
   return newObj;
 }
 
+/* I tried to get it to work, but I can't figure it out without every() */
 /* omit2 only works due to arguments passed, if there was a third item in keys passed
    and another item in source passed, would need to add (prop !== keys[i += 2]) */
 // eslint-disable-next-line no-unused-vars
 function omit2(source, keys) {
   var newObj = {};
-  for (var i = 0; i < keys.length; i++) {
-    for (var prop in source) {
-      if (prop !== keys[i] && prop !== keys[i++]) {
+  for (var prop in source) {
+    for (var i = 0; i < keys.length; i++) {
+      if (prop === keys[i]) {
+        break;
+      } else {
         newObj[prop] = source[prop];
       }
     }
