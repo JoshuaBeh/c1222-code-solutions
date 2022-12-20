@@ -3,9 +3,9 @@ var $form = document.querySelector('form');
 function handleSubmit(event) {
   event.preventDefault();
   var newObj = {};
-  newObj.name = $form.input.value;
-  newObj.email = $form.input.value;
-  newObj.message = $form.textarea.value;
+  newObj.name = document.querySelector('input#user-name').value;
+  newObj.email = document.querySelector('input#user-email').value;
+  newObj.message = document.querySelector('textarea#user-message').value;
   console.log(newObj);
   $form.reset();
 }
