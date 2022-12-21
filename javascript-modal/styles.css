@@ -2,11 +2,30 @@
   box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+}
+
 h2 {
   font-size: 1.6rem;
   font-family: sans-serif;
   margin-top: 70px;
   padding-bottom: 40px;
+}
+
+.row {
+  display: flex;
+  position: relative;
+}
+
+.col-100 {
+  flex-basis: 100%;
+  position: relative;
+}
+
+.z-index-neg {
+  position: relative;
+  z-index: -1;
 }
 
 .pop-up-background {
@@ -55,6 +74,7 @@ h2 {
 }
 
 .pop-up {
+  background-color: white;
   border: 1px solid white;
   border-radius: 5px;
   height: 280px;
