@@ -1,0 +1,55 @@
+* {
+  box-sizing: border-box;
+}
+
+h2 {
+  font-size: 1.6rem;
+  font-family: sans-serif;
+  margin-top: 70px;
+  padding-bottom: 50px;
+}
+
+.container {
+  width: 1000px;
+  position: relative;
+}
+
+.modal-button {
+  color: white;
+  background-color: rgb(74 74 233);
+  width: 220px;
+  height: 50px;
+  font-size: 1.6rem;
+  border: 1px solid rgb(74 74 233);
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgb(165 166 166);
+  margin-top: 2px;
+  margin-left: 2px;
+}
+
+.no-button {
+  color: white;
+  background-color: rgb(235 93 93);
+  width: 110px;
+  height: 50px;
+  font-size: 1.6rem;
+  border: 1px solid rgb(235 93 93);
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgb(165 166 166);
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pop-up {
+  border: 1px solid white;
+  border-radius: 5px;
+  height: 280px;
+  width: 525px;
+  position: fixed;
+  top: 35%;
+  left: 35%;
+}
