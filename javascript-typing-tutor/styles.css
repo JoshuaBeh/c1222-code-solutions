@@ -17,6 +17,41 @@ h2 {
   font-weight: 500;
 }
 
+.center-h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.black {
+  color: black;
+}
+
+.red-2 {
+  color: red;
+}
+
+.yellow {
+  color: rgb(192 192 7);
+}
+
+#how {
+  position: absolute;
+  font-size: 1.05rem;
+  font-family: "Roboto Slab", sans-serif;
+  right: 18%;
+  bottom: 6%;
+  top: 30%;
+}
+
+.how-color {
+  color: brown;
+}
+
 .dark-green {
   color: green;
 }
