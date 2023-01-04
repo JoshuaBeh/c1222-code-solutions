@@ -5,5 +5,26 @@ function Bank() {
 }
 
 Bank.prototype.openAccount = function (holder, balance) {
+  if (balance > 0 && typeof balance !== 'string' && !isNaN(balance) && Math.floor(balance) === balance) {
+    var account = new Account(this.nextAccountNumber, holder);
+    account.deposit(balance);
+    this.accounts.push(account);
+    this.nextAccountNumber++;
+    return account.number;
+  } else {
+    return null;
+  }
+};
 
+Bank.prototype.getAccount = function (number) {
+  var accounts = this.accounts;
+  for (var i = 0; i < accounts.length; i++) {
+    if (accounts[i].number === number) {
+      return accounts[i];
+    }
+  }
+  return null;
+};
+
+Bank.prototype.getTotalAssets = function () {
 };
