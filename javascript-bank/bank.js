@@ -27,4 +27,20 @@ Bank.prototype.getAccount = function (number) {
 };
 
 Bank.prototype.getTotalAssets = function () {
+  var accounts = this.accounts;
+  var total = 0;
+  if (accounts.length === 0) {
+    return 0;
+  }
+  for (var i = 0; i < accounts.length; i++) {
+    var transactions = accounts[i].transactions;
+    for (var j = 0; j < transactions.length; j++) {
+      if (transactions[j].type === 'deposit') {
+        total = total + transactions[j].amount;
+      } else {
+        total = total - transactions[j].amount;
+      }
+    }
+  }
+  return total;
 };
