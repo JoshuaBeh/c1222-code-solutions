@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(254 249 241);
+  margin: auto;
+}
+
+.container {
+  width: 1280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 624px;
+}
+
+.circle {
+  border-radius: 80px;
+  background-color: rgb(250 234 132);
+  width: 145px;
+  height: 145px;
+  box-shadow: 0 10px 10px rgb(253 242 188);
+}
+
+.new-circle {
+  border-radius: 80px;
+  background-color: rgb(37 37 37);
+  width: 145px;
+  height: 145px;
+  box-shadow: 0 -10px 3px rgb(12 12 12);
+}
+
+.new-bc {
+  background-color: rgb(17 17 17);
+}
