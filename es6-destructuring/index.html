@@ -29,6 +29,37 @@
     const { author: book2Author } = book2;
     const { libraryID: book2LibraryID } = book2;
     console.log(`The title of the book it ${book2Title}, the author is ${book2Author}, and the library id is ${book2LibraryID}`);
+
+    const library = [
+      {
+        title: 'The Road Ahead',
+        author: 'Bill Gates',
+        libraryID: 1254
+      },
+      {
+        title: 'Walter Isaacson',
+        author: 'Steve Jobs',
+        libraryID: 4264
+      },
+      {
+        title: 'Mockingjay: The Final Book of The Hunger Games',
+        author: 'Suzanne Collins',
+        libraryID: 3245
+      },
+      {
+        title: "Dead Dead Demon's De De De De Destruction",
+        author: 'Inio Asano',
+        libraryID: 1233
+      }
+    ];
+
+    const [book3, book4, book5] = library;
+    console.log('book3: ', book3);
+    console.log('book4: ', book4);
+    console.log('book5: ', book5);
+
+    const [, , , book6] = library;
+    console.log('book6: ', book6);
   </script>
 </body>
 </html>
