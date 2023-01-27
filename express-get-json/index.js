@@ -26,7 +26,7 @@ app.get('/api/grades', (req, res, next) => {
   for (const prop in grades) {
     gradesArray.push(grades[prop]);
   }
-  res.send(gradesArray);
+  res.json(gradesArray);
 });
 
 app.listen(3000, (err) => {
