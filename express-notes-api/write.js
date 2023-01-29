@@ -1,16 +1,10 @@
 const fs = require('fs');
 
 function write(path, data) {
-  fs.readFile(path, 'utf-8', (err) => {
+  fs.writeFile(path, JSON.stringify(data, null, 2), { flag: 'r+' }, (err) => {
     if (err) {
-      console.error(err);
-      return;
+      console.error('Error when writing', err);
     }
-    fs.writeFile(path, JSON.stringify(data, null, 2), (err) => {
-      if (err) {
-        console.error('Error when writing', err);
-      }
-    });
   });
 }
 module.exports = write;

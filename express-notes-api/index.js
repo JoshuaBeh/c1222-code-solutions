@@ -3,7 +3,7 @@ const app = express();
 const fs = require('fs');
 const data = require('./data.json');
 const write = require('./write');
-const path = './data.json';
+const path = './data1.json';
 
 app.use(express.json());
 
