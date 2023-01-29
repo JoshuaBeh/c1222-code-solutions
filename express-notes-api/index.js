@@ -66,7 +66,7 @@ app.delete('/api/notes/:id', (req, res) => {
     return;
   }
   write(path, data);
-  if (fs.existsSync(path) === false) {
+  if (!fs.existsSync(path)) {
     const wrongFile = { error: 'An unexpected error occured.' };
     res.status(500).json(wrongFile);
     return;
@@ -93,7 +93,7 @@ app.put('/api/notes/:id', (req, res) => {
   data.notes[id].content = req.body.content;
   const selectedNote = data.notes[id];
   write(path, data);
-  if (fs.existsSync(path) === false) {
+  if (!fs.existsSync(path)) {
     const wrongFile = { error: 'An unexpected error occured.' };
     res.status(500).json(wrongFile);
     return;
