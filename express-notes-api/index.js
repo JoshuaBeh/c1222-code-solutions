@@ -42,12 +42,12 @@ app.post('/api/notes', (req, res) => {
   data.notes[id] = req.body;
   data.notes[id].id = id;
   data.nextId++;
-  write(path, data);
   if (fs.existsSync(path) === false) {
     const wrongFile = { error: 'An unexpected error occured.' };
     res.status(500).json(wrongFile);
     return;
   }
+  write(path, data);
   res.status(201).json(body);
 
 });
@@ -65,12 +65,12 @@ app.delete('/api/notes/:id', (req, res) => {
     res.status(404).json(notFound);
     return;
   }
-  write(path, data);
   if (fs.existsSync(path) === false) {
     const wrongFile = { error: 'An unexpected error occured.' };
     res.status(500).json(wrongFile);
     return;
   }
+  write(path, data);
   res.sendStatus(204);
 });
 
@@ -92,12 +92,12 @@ app.put('/api/notes/:id', (req, res) => {
   }
   data.notes[id].content = req.body.content;
   const selectedNote = data.notes[id];
-  write(path, data);
   if (fs.existsSync(path) === false) {
     const wrongFile = { error: 'An unexpected error occured.' };
     res.status(500).json(wrongFile);
     return;
   }
+  write(path, data);
   res.status(200).json(selectedNote);
 });
 
