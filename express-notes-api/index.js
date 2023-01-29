@@ -3,7 +3,7 @@ const app = express();
 const fs = require('fs');
 const data = require('./data.json');
 const write = require('./write');
-const path = './data1.json';
+const path = './data.json';
 
 app.use(express.json());
 
@@ -43,7 +43,7 @@ app.post('/api/notes', (req, res) => {
   data.notes[id].id = id;
   data.nextId++;
   write(path, data);
-  if (fs.existsSync(path) === false) {
+  if (!fs.existsSync(path)) {
     const wrongFile = { error: 'An unexpected error occured.' };
     res.status(500).json(wrongFile);
     return;
