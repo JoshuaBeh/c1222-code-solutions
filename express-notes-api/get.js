@@ -1,4 +1,4 @@
-function getList(app, data) {
+function getId(app, data) {
   app.get('/api/notes/:id', (req, res) => {
     // Is this fine to use as well? const id = req.url.split('/')[3];
     const id = req.params.id;
@@ -16,7 +16,7 @@ function getList(app, data) {
   });
 }
 
-function getId(app, data) {
+function getList(app, data) {
   app.get('/api/notes', (req, res) => {
     const notesArr = [];
     for (const entry in data.notes) {
