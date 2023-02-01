@@ -80,10 +80,73 @@ app.post('/api/grades', (req, res, next) => {
   }
   db.query(sql, params)
     .then((result) => {
-      const obj = { name: params[0], course: params[1], score: params[2] };
-      result.rows.push(obj);
       const data = result.rows[0];
       res.status(201).json(data);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).json({
+        error: 'An unexpected error occurred.'
+      });
+    });
+});
+
+app.put('/api/grades/:gradeId', (req, res, next) => {
+  const gradeId = Number(req.params.gradeId);
+  if (!Number.isInteger(gradeId) || gradeId <= 0) {
+    res.status(400).json({ error: '"gradeId" must be a positive integer' });
+    return;
+  } else if (req.body.name === undefined || req.body.course === undefined || req.body.score === undefined) {
+    res.status(400).json({ error: 'all fields are required' });
+  }
+  const sql = `update "grades"
+                set "name" = $2,
+                    "course" = $3,
+                    "score" = $4
+                where "gradeId" = $1
+                returning *
+                `;
+  const params = [gradeId, req.body.name, req.body.course, req.body.score];
+  db.query(sql, params)
+    .then((result) => {
+      const data = result.rows[0];
+      if (!data) {
+        res.status(404).json({
+          error: `Cannot find grade with "gradeId" ${gradeId}`
+        });
+        return;
+      }
+      res.json(data);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).json({
+        error: 'An unexpected error occurred.'
+      });
+    });
+});
+
+app.delete('/api/grades/:gradeId', (req, res, next) => {
+  const gradeId = Number(req.params.gradeId);
+  if (!Number.isInteger(gradeId) || gradeId <= 0) {
+    res.status(400).json({ error: '"gradeId" must be a positive integer' });
+    return;
+  }
+  const sql = `delete from "grades"
+                where "gradeId" = $1
+                returning *
+                `;
+  const params = [gradeId];
+  db.query(sql, params)
+    .then((result) => {
+      const data = result.rows[0];
+      if (!data) {
+        res.status(404).json({
+          error: `Cannot find grade with "gradeId" ${gradeId}`
+        });
+        return;
+      }
+      res.status(204).json(data);
     })
     .catch((err) => {
       console.error(err);
