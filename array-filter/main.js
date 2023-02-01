@@ -21,5 +21,5 @@ console.log(overFive);
 const startWithE = names.filter((word) => word[0] === 'E');
 console.log(startWithE);
 
-const haveD = names.filter((word) => word.includes('D' || 'd'));
+const haveD = names.filter((word) => word.includes('D') || word.includes('d'));
 console.log(haveD);
