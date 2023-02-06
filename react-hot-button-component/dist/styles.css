@@ -1,0 +1,39 @@
+button {
+  height: 65px;
+  width: 150px;
+  font-size: 1.1rem;
+  border: 3px solid black;
+  box-shadow: 6px 4px 4px black;
+}
+
+.blue {
+  background-color: rgb(13 1 69);
+  color: white;
+}
+
+.purple {
+  background-color: rgb(53 28 117);
+  color: white;
+}
+
+.light-purple {
+  background-color: rgb(103 78 167);
+  color: white;
+}
+
+.peach {
+  background-color: rgb(224 102 102);
+  color: white;
+}
+
+.orange {
+  background-color: rgb(246 178 107);
+}
+
+.yellow {
+  background-color: rgb(255 255 0);
+}
+
+.white {
+  background-color: white;
+}
