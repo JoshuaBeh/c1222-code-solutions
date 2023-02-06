@@ -6,22 +6,23 @@ const buttonStyle = {
 };
 
 function HotButton() {
-  const [index, setIndex] = useState(1);
+  const [index, setIndex] = useState(0);
   function handleClick() {
-    setIndex(index + 1);
-    if (index < 3) {
+    const newIndex = index + 1;
+    setIndex(newIndex);
+    if (newIndex < 3) {
       buttonStyle.color = 'blue';
-    } else if (index < 6) {
+    } else if (newIndex < 6) {
       buttonStyle.color = 'purple';
-    } else if (index < 9) {
+    } else if (newIndex < 9) {
       buttonStyle.color = 'light-purple';
-    } else if (index < 12) {
+    } else if (newIndex < 12) {
       buttonStyle.color = 'peach';
-    } else if (index < 15) {
+    } else if (newIndex < 15) {
       buttonStyle.color = 'orange';
-    } else if (index < 18) {
+    } else if (newIndex < 18) {
       buttonStyle.color = 'yellow';
-    } else if (index >= 18) {
+    } else if (newIndex >= 18) {
       buttonStyle.color = 'white';
     }
   }
