@@ -1,0 +1,49 @@
+h3 {
+  width: 40px;
+  font-family: sans-serif;
+}
+
+.row {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  position: relative;
+  width: 80px;
+  height: 35px;
+  background-color: grey;
+  border: 2px solid black;
+  border-radius: 22px;
+}
+
+.circle {
+  width: 35px;
+  height: 32px;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 30px;
+}
+
+.off {
+  position: absolute;
+}
+
+.on {
+  position: absolute;
+  right: 0;
+}
+
+.on-background {
+  background-color: green;
+}
+
+.off-background {
+  background-color: grey;
+}
+
+.margin-right-20 {
+  margin-right: 20px;
+}
