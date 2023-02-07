@@ -13,28 +13,30 @@ export default function StopWatch() {
     count: 0
   };
 
-  let [start, setStart] = useState(null);
-  const [toggle, setToggle] = useState(false);
-  let [time, setTime] = useState(0);
+  const [start, setStart] = useState();
+  const [time, setTime] = useState(0);
+
+  function tick() {
+    setTime((prev) => prev + 1);
+  }
+
   function handlePlayClick() {
-    clearInterval(start);
-    const currentToggle = !toggle;
-    setToggle(currentToggle);
-    if (currentToggle) {
-      start = setInterval(() => {
-        setTime(time++);
-      }, 1000);
+    if (start) {
+      clearInterval(start);
+      setStart(undefined);
+    } else {
+      const newTimer = setInterval(tick, 1000);
+      setStart(newTimer);
     }
-    setStart(start);
   }
 
   function handleButtonClick() {
     setTime(0);
     clearInterval(start);
-    setToggle(false);
+    setStart(undefined);
   }
 
-  const classes = switchClasses[toggle ? 'pause' : 'play'];
+  const classes = switchClasses[start ? 'pause' : 'play'];
   return (
     <div className='row'>
       <button onClick={handleButtonClick}>{time}</button>
