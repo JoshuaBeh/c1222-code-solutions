@@ -9,24 +9,21 @@ function HotButton() {
   }
 
   let color = 'blue';
-  function checkIndex() {
-    if (index < 3) {
-      color = 'blue';
-    } else if (index < 6) {
-      color = 'purple';
-    } else if (index < 9) {
-      color = 'light-purple';
-    } else if (index < 12) {
-      color = 'peach';
-    } else if (index < 15) {
-      color = 'orange';
-    } else if (index < 18) {
-      color = 'yellow';
-    } else if (index >= 18) {
-      color = 'white';
-    }
+  if (index < 3) {
+    color = 'blue';
+  } else if (index < 6) {
+    color = 'purple';
+  } else if (index < 9) {
+    color = 'light-purple';
+  } else if (index < 12) {
+    color = 'peach';
+  } else if (index < 15) {
+    color = 'orange';
+  } else if (index < 18) {
+    color = 'yellow';
+  } else {
+    color = 'white';
   }
-  checkIndex();
 
   return (
     <div>
