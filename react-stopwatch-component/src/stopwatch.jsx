@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+let intervalId;
 export default function StopWatch() {
   const switchClasses = {
     play: {
@@ -13,24 +14,22 @@ export default function StopWatch() {
     count: 0
   };
 
-  let [start, setStart] = useState(null);
   const [toggle, setToggle] = useState(false);
   let [time, setTime] = useState(0);
   function handlePlayClick() {
-    clearInterval(start);
+    clearInterval(intervalId);
     const currentToggle = !toggle;
     setToggle(currentToggle);
     if (currentToggle) {
-      start = setInterval(() => {
+      intervalId = setInterval(() => {
         setTime(time++);
       }, 1000);
     }
-    setStart(start);
   }
 
   function handleButtonClick() {
     setTime(0);
-    clearInterval(start);
+    clearInterval(intervalId);
     setToggle(false);
   }
 
