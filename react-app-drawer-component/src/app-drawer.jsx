@@ -25,10 +25,14 @@ export default function AppDrawer() {
     }
   }
 
+  function backgroundClose() {
+    setIsHidden(!isHidden);
+  }
+
   const classes = games[!isHidden ? 'shown' : 'hidden'];
   return (
     <div className='container'>
-      <div className={classes.popUpBackground}></div>
+      <div className={classes.popUpBackground} onClick={backgroundClose}></div>
       <div className='relative' onClick={selectGame}>
         <div className='absolute'>
           <i className='fa-solid fa-bars' onClick={popUpMenu}></i>
