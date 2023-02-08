@@ -17,10 +17,6 @@ export default function ValidateInput() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    // const form = event.target;
-    // const formData = new FormData(form);
-    // const formJson = Object.fromEntries(formData.entries());
-    // console.log(formJson);
   }
 
   if (password.length === 0) {
@@ -29,7 +25,12 @@ export default function ValidateInput() {
     switchClasses.hidden = '';
   }
 
-  const classes = switchClasses[password.length >= 8 ? 'greenCheck' : 'redX'];
+  const conditions = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')'];
+  const zeroToNine = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+  const special = conditions.some((char) => password.includes(char));
+  const numbers = zeroToNine.some((number) => password.includes(number));
+
+  const classes = switchClasses[password.length >= 8 && special && numbers ? 'greenCheck' : 'redX'];
   return (
     <form className='row' onSubmit={handleSubmit}>
       <div className='relative'>
@@ -44,6 +45,7 @@ export default function ValidateInput() {
           value={password}
           name="password"
           id="password"
+          // required="required"
           onChange={(event) => setPassword(event.target.value)}
         />
         <i className={`${classes.style} ${switchClasses.hidden}`}></i>
