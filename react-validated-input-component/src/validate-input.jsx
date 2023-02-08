@@ -19,23 +19,39 @@ export default function ValidateInput() {
     event.preventDefault();
   }
 
+  const conditions = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')'];
+  const zeroToNine = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+  const special = conditions.some((char) => password.includes(char));
+  const numbers = zeroToNine.some((number) => password.includes(number));
+
+  if (password.length < 8 && !special && !numbers) {
+    switchClasses.redX.text = 'Password requires a number and special chararcteer.';
+  } else if (password.length >= 8 && !special && !numbers) {
+    switchClasses.redX.text = 'Password requires a number and special chararcteer.';
+  } else if (password.length < 8 && !special) {
+    switchClasses.redX.text = 'Password requires a special chararcteer.';
+  } else if (password.length >= 8 && !special) {
+    switchClasses.redX.text = 'Password requires a special chararcteer.';
+  } else if (password.length < 8 && !numbers) {
+    switchClasses.redX.text = 'Password requires a number.';
+  } else if (password.length >= 8 && !numbers) {
+    switchClasses.redX.text = 'Password requires a number.';
+  } else if (password.length < 8) {
+    switchClasses.redX.text = 'Your password is too short.';
+  }
+
   if (password.length === 0) {
     switchClasses.hidden = 'hidden';
   } else {
     switchClasses.hidden = '';
   }
 
-  const conditions = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')'];
-  const zeroToNine = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-  const special = conditions.some((char) => password.includes(char));
-  const numbers = zeroToNine.some((number) => password.includes(number));
-
   const classes = switchClasses[password.length >= 8 && special && numbers ? 'greenCheck' : 'redX'];
   return (
     <form className='row' onSubmit={handleSubmit}>
       <div className='relative'>
         <label
-          className="margin-right-10 block"
+          className="block"
           htmlFor="password">
           Password
         </label>
@@ -45,7 +61,6 @@ export default function ValidateInput() {
           value={password}
           name="password"
           id="password"
-          // required="required"
           onChange={(event) => setPassword(event.target.value)}
         />
         <i className={`${classes.style} ${switchClasses.hidden}`}></i>
