@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 export default function AppDrawer() {
   const [isHidden, setIsHidden] = useState(true);
+  const [curImg, setCurImg] = useState('');
 
   const games = {
     hidden: {
@@ -10,39 +11,37 @@ export default function AppDrawer() {
     },
     shown: {
       popUpBackground: 'pop-up-background',
-      left: ''
+      left: 'right'
     }
   };
 
-  function popUpMenu() {
+  function selectGame(input) {
+    setCurImg(input);
     setIsHidden(!isHidden);
   }
 
-  function selectGame(event) {
-    const closestGame = event.target.closest('a');
-    if (closestGame) {
-      setIsHidden(!isHidden);
-    }
+  function popUpMenu() {
+    setIsHidden(!isHidden);
   }
 
   function backgroundClose() {
     setIsHidden(!isHidden);
   }
 
-  const classes = games[!isHidden ? 'shown' : 'hidden'];
+  const { popUpBackground, left } = games[!isHidden ? 'shown' : 'hidden'];
   return (
-    <div className='container'>
-      <div className={classes.popUpBackground} onClick={backgroundClose}></div>
-      <div className='relative' onClick={selectGame}>
+    <div className={`container ${curImg}`}>
+      <div className={popUpBackground} onClick={backgroundClose}></div>
+      <div className='relative'>
         <div className='absolute'>
           <i className='fa-solid fa-bars' onClick={popUpMenu}></i>
         </div>
-        <div className={`absolute menu row ${classes.left}`}>
+        <div className={`absolute menu row ${left}`}>
           <h1>Choose a Game</h1>
-          <a>Escape from Tarkov</a>
-          <a>League of Legends</a>
-          <a>Halo</a>
-          <a>Terraria</a>
+          <a onClick={() => selectGame('eft')}>Escape from Tarkov</a>
+          <a onClick={() => selectGame('lol')}>League of Legends</a>
+          <a onClick={() => selectGame('halo')}>Halo</a>
+          <a onClick={() => selectGame('ter')}>Terraria</a>
         </div>
       </div>
       <div className='pop-up'></div>
