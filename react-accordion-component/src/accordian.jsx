@@ -12,7 +12,7 @@ export default function Accordian({ items }) {
 function ListItem({ item }) {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div key={item.language} className="item">
+    <div className="item">
       <h1 onClick={() => setIsOpen(!isOpen)}>{item.language}</h1>
       <p className={isOpen ? '' : 'hidden'}>{item.description}</p>
     </div>
