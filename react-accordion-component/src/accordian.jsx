@@ -26,7 +26,7 @@ function ListItems({ items, isOpen, onClick, setIsOpen }) {
       {items.map((item) => (
         <div key={item.language} style={randomColor()}>
           <h1 onClick={() => isOpen === item.language ? setIsOpen('') : setIsOpen(item.language)}>{item.language}</h1>
-          <p className={`${isOpen === item.language ? '' : 'hidden'} ${item.language.split(' ').join('-').toLowerCase()}`}>{item.description}</p>
+          <p className={`${isOpen === item.language ? '' : 'hidden'}`}>{item.description}</p>
         </div>
       ))}
     </>
