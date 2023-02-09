@@ -41,7 +41,7 @@ function ListItem({ item }) {
 //   return classes;
 // }
 
-// function ListItems({ items, isOpen, onClick, setIsOpen }) {
+// function ListItems({ items, isOpen, setIsOpen }) {
 //   return (
 //     <>
 //       {items.map((item) => (
