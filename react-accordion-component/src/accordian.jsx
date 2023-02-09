@@ -4,9 +4,7 @@ export default function Accordian({ items }) {
 
   return (
     <div className='row'>
-      {
-        items.map((item) => <ListItem key={item.language} item={item} />)
-      }
+      {items.map((item) => <ListItem key={item.language} item={item} />)}
     </div>
   );
 }
