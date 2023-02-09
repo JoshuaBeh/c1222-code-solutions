@@ -14,7 +14,7 @@ function ListItem({ item }) {
   return (
     <div key={item.language} className="item">
       <h1 onClick={() => setIsOpen(!isOpen)}>{item.language}</h1>
-      <p className={`${isOpen ? '' : 'hidden'}`}>{item.description}</p>
+      <p className={isOpen ? '' : 'hidden'}>{item.description}</p>
     </div>
   );
 }
