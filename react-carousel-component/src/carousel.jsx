@@ -17,7 +17,7 @@ export default function Carousel({ images }) {
       setCurImage(curImage === length - 1 ? 0 : curImage + 1);
     }, 3000);
     return () => clearInterval(interval);
-  });
+  }, [curImage, length]);
 
   // Moves the image left or right depending on the current image
   const imgHolder = {
