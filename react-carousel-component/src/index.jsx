@@ -5,19 +5,19 @@ import Carousel from './carousel';
 const images = [
   {
     id: 0,
-    src: '../images/bulb.png'
+    src: '../images/bulbasaur.png'
   },
   {
     id: 1,
-    src: '../images/char.png'
+    src: '../images/charmander.png'
   },
   {
     id: 2,
-    src: '../images/jiggly.png'
+    src: '../images/jigglypuff.png'
   },
   {
     id: 3,
-    src: '../images/pika.png'
+    src: '../images/pikachu.png'
   },
   {
     id: 4,

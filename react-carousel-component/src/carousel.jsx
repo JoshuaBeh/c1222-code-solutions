@@ -38,7 +38,7 @@ export default function Carousel({ images }) {
         </div>
         <div className='button-wrapper'>
           {
-            images.map((image) => <CarouselButtons key={image.id} image={image} />)
+            images.map((image) => <CarouselButtons key={image.id} image={image} curImage={curImage} setCurImage={setCurImage} />)
           }
         </div>
       </div>
@@ -53,8 +53,8 @@ function CarouselImage({ image }) {
   );
 }
 
-function CarouselButtons({ image }) {
+function CarouselButtons({ image, setCurImage, curImage }) {
   return (
-    <button id={image.id}></button>
+    <button className={image.id === curImage ? 'black' : ''} id={image.id} onClick={() => setCurImage(image.id)}></button>
   );
 }

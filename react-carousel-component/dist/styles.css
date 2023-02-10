@@ -62,3 +62,7 @@ i {
   right: 0;
   z-index: 20;
 }
+
+.black {
+  background-color: black;
+}
