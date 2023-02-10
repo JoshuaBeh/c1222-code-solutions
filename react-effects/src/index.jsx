@@ -17,7 +17,7 @@ function List() {
       .catch((error) => {
         console.error(error.message);
       });
-  }, [isLoading, items]);
+  }, [isLoading]);
 
   if (isLoading) {
     return <div>Loading...</div>;
