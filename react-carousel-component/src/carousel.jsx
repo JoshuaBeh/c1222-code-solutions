@@ -19,6 +19,7 @@ export default function Carousel({ images }) {
     return () => clearInterval(interval);
   });
 
+  // Moves the image left or right depending on the current image
   const imgHolder = {
     transform: 'translateX(' + (-curImage * 100) + '%)',
     display: 'flex'
@@ -27,18 +28,18 @@ export default function Carousel({ images }) {
   return (
     <div className='row'>
       <div className='col-half'>
+        <i className='fa-solid fa-chevron-left' id='left-arrow' onClick={prevSlide}></i>
         <div className='container'>
-          <i className='fa-solid fa-chevron-left' id='left-arrow' onClick={prevSlide}></i>
-          <i className='fa-solid fa-chevron-right' id='right-arrow' onClick={nextSlide}></i>
           <div className='img-holder' style={imgHolder}>
             {
               images.map((image) => <CarouselImage key={image.id} image={image} />)
             }
           </div>
         </div>
+        <i className='fa-solid fa-chevron-right' id='right-arrow' onClick={nextSlide}></i>
         <div className='button-wrapper'>
           {
-            images.map((image) => <CarouselButtons key={image.id} image={image} curImage={curImage} setCurImage={setCurImage} />)
+            images.map((image, index) => <CarouselButtons key={image.id} image={image} curImage={curImage} setCurImage={setCurImage} index={index} />)
           }
         </div>
       </div>
@@ -53,8 +54,8 @@ function CarouselImage({ image }) {
   );
 }
 
-function CarouselButtons({ image, setCurImage, curImage }) {
+function CarouselButtons({ image, setCurImage, curImage, index }) {
   return (
-    <button className={image.id === curImage ? 'black' : ''} id={image.id} onClick={() => setCurImage(image.id)}></button>
+    <button className={index === curImage ? 'black' : ''} id={image.id} onClick={() => setCurImage(image.id)}></button>
   );
 }

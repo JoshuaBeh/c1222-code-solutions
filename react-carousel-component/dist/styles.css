@@ -24,6 +24,7 @@ i {
 }
 
 .button-wrapper {
+  margin-top: 20px;
   display: flex;
   justify-content: center;
 }
@@ -41,14 +42,17 @@ i {
 .container {
   position: relative;
   overflow: hidden;
-  height: 600px;
+  height: 475px;
+  border: 2px solid black;
+  border-radius: 8px;
 }
 
 #left-arrow {
   font-size: 2rem;
   position: absolute;
-  top: 50%;
-  z-index: 20;
+  top: 40%;
+  left: 35%;
+  z-index: 2;
 }
 
 .img-holder {
@@ -58,9 +62,9 @@ i {
 #right-arrow {
   font-size: 2rem;
   position: absolute;
-  top: 50%;
-  right: 0;
-  z-index: 20;
+  top: 40%;
+  right: 35%;
+  z-index: 2;
 }
 
 .black {
