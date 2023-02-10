@@ -10,17 +10,14 @@ function List() {
   // Your code here:
   //  - Read the items using `readItems` and update state so the list displays
   useEffect(() => {
-    const promise = readItems();
-    promise.then((value) => {
-      if (isLoading) {
-        setIsLoading(!isLoading);
-      }
+    readItems().then((value) => {
+      setIsLoading(!isLoading);
       setItems(value);
     })
       .catch((error) => {
         console.error(error.message);
       });
-  }, [isLoading]);
+  }, [isLoading, items]);
 
   if (isLoading) {
     return <div>Loading...</div>;
