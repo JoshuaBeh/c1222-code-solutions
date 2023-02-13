@@ -15,7 +15,10 @@ export default function App() {
         setUsers(response);
         setIsLoading(false);
       })
-      .catch((error) => console.error(error));
+      .catch((error) => {
+        console.error(error);
+        return <p>Something went wrong, please try again later.</p>;
+      });
   }, []);
 
   return isLoading
