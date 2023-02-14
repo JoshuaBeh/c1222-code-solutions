@@ -55,7 +55,6 @@ export default function App() {
       .then((response) => response.json())
       .then((data) => {
         setErr(false);
-        const copyState = todos.slice(0);
         setTodos(todos.concat(data));
       })
       .catch((error) => {
@@ -107,7 +106,7 @@ export default function App() {
       .then((response) => response.json())
       .then((data) => {
         setErr(false);
-        if (todos[index].todoId === todoId) {
+        if (todos[index].todoId === data.todoId) {
           data.isCompleted = oppIsCompleted;
         }
         const copyState = todos.slice(0);
