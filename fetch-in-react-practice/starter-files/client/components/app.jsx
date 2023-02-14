@@ -85,14 +85,12 @@ export default function App() {
      * TIP: Be sure to SERIALIZE the updates in the body with JSON.stringify()
      * And specify the "Content-Type" header as "application/json"
      */
-    let oppIsCompleted;
     let index;
     let request;
     for (let i = 0; i < todos.length; i++) {
       if (todos[i].todoId === todoId) {
         index = i;
-        oppIsCompleted = !todos[i].isCompleted;
-        request = { isCompleted: oppIsCompleted };
+        request = { isCompleted: !todos[i].isCompleted };
       }
     }
     const options = {
@@ -106,12 +104,13 @@ export default function App() {
       .then((response) => response.json())
       .then((data) => {
         setErr(false);
-        if (todos[index].todoId === data.todoId) {
-          data.isCompleted = oppIsCompleted;
-        }
         const copyState = todos.slice(0);
-        copyState[index] = data;
-        setTodos(copyState);
+        if (todos[index].todoId === data.todoId) {
+          copyState[index] = data;
+          setTodos(copyState);
+        } else {
+          setTodos(copyState);
+        }
       })
       .catch((error) => {
         console.error(error);
