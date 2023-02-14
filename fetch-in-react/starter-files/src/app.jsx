@@ -5,6 +5,7 @@ import UserList from './user-list';
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [users, setUsers] = useState([]);
+  const [err, setErr] = useState(false);
 
   /* your code here (hint: useEffect) */
   const url = 'https://jsonplaceholder.typicode.com/users';
@@ -17,9 +18,13 @@ export default function App() {
       })
       .catch((error) => {
         console.error(error);
-        return <p>Something went wrong, please try again later.</p>;
+        setErr(true);
       });
   }, []);
+
+  if (err) {
+    return <p>Something went wrong, please try again later.</p>;
+  }
 
   return isLoading
     ? <p>Loading...</p>
