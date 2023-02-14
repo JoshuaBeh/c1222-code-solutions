@@ -6,6 +6,7 @@ import TodoForm from './todo-form';
 
 export default function App() {
   const [todos, setTodos] = useState([]);
+  const [err, setErr] = useState(false);
 
   useEffect(() => {
     /**
@@ -13,6 +14,16 @@ export default function App() {
      * Then 😉, once the response JSON is received and parsed,
      * update state with the received todos.
      */
+    fetch('/api/todos')
+      .then((response) => response.json())
+      .then((data) => {
+        setErr(false);
+        setTodos(data);
+      })
+      .catch((error) => {
+        console.error(error);
+        setErr(true);
+      });
   }, []);
 
   function addTodo(newTodo) {
@@ -32,6 +43,25 @@ export default function App() {
     * TIP: Use Array.prototype.concat to create a new array containing the contents
     * of the old array, plus the object returned by the server.
     */
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newTodo)
+    };
+
+    fetch('/api/todos', options)
+      .then((response) => response.json())
+      .then((data) => {
+        setErr(false);
+        const copyState = todos.slice(0);
+        setTodos(todos.concat(data));
+      })
+      .catch((error) => {
+        console.error(error);
+        setErr(true);
+      });
   }
 
   function toggleCompleted(todoId) {
@@ -56,6 +86,48 @@ export default function App() {
      * TIP: Be sure to SERIALIZE the updates in the body with JSON.stringify()
      * And specify the "Content-Type" header as "application/json"
      */
+    let oppIsCompleted;
+    let index;
+    let request;
+    for (let i = 0; i < todos.length; i++) {
+      if (todos[i].todoId === todoId) {
+        index = i;
+        oppIsCompleted = !todos[i].isCompleted;
+        request = { isCompleted: oppIsCompleted };
+      }
+    }
+    const options = {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(request)
+    };
+    fetch(`/api/todos/${todoId}`, options)
+      .then((response) => response.json())
+      .then((data) => {
+        setErr(false);
+        data.isCompleted = oppIsCompleted;
+        const copyState = todos.slice(0);
+        copyState[index] = data;
+        setTodos(copyState);
+      })
+      .catch((error) => {
+        console.error(error);
+        setErr(true);
+      });
+  }
+
+  if (err) {
+    return (
+      <div className='container'>
+        <div className='row'>
+          <div className='col pt-5'>
+            <p>Something went wrong, please try again later.</p>
+          </div>
+        </div>
+      </div>
+    );
   }
 
   return (
