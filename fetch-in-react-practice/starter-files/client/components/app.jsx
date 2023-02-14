@@ -107,10 +107,8 @@ export default function App() {
         const copyState = todos.slice(0);
         if (todos[index].todoId === data.todoId) {
           copyState[index] = data;
-          setTodos(copyState);
-        } else {
-          setTodos(copyState);
         }
+        setTodos(copyState);
       })
       .catch((error) => {
         console.error(error);
