@@ -107,7 +107,9 @@ export default function App() {
       .then((response) => response.json())
       .then((data) => {
         setErr(false);
-        data.isCompleted = oppIsCompleted;
+        if (todos[index].todoId === todoId) {
+          data.isCompleted = oppIsCompleted;
+        }
         const copyState = todos.slice(0);
         copyState[index] = data;
         setTodos(copyState);
