@@ -19,6 +19,8 @@ export default function App() {
     }
 
     window.addEventListener('hashchange', handleHashChange);
+
+    return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
   function renderPage() {
