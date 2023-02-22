@@ -1,0 +1,56 @@
+* {
+  box-sizing: border-box;
+}
+
+.hidden {
+  display: none !important;
+}
+
+button {
+  margin-top: 35px;
+}
+
+i {
+  position: absolute;
+  font-size: 1.4rem;
+  right: -25px;
+}
+
+h4 {
+  font-size: 0.8rem;
+  position: absolute;
+  top: 25px;
+  color: red;
+}
+
+.relative {
+  position: relative;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.margin-right-10 {
+  margin-right: 10px;
+}
+
+.margin-left-10 {
+  margin-left: 10px;
+}
+
+.block {
+  display: block;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
